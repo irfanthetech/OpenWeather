@@ -5,8 +5,8 @@ import hopsworks
 from dotenv import load_dotenv
 from datetime import datetime, UTC, timedelta
 load_dotenv()
-ow_key = os.getenv("openweather_key")
-hw_key = os.getenv("HOPSWORKS_OW_API_KEY")
+ow_key = os.getenv("OPENWEATHER_API_KEY")
+hw_key = os.getenv("HOPSWORKS_API_KEY")
 lat, lon = 33.63, 73.04  
 ow_url = f"http://api.openweathermap.org/data/2.5/air_pollution?lat={lat}&lon={lon}&appid={ow_key}"
 
