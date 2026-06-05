@@ -1,0 +1,11 @@
+pandas==2.3.1
+hopsworks==4.7.1
+requests
+python-dotenv
+pyarrow==24.0.0
+confluent-kafka==2.14.0
+numpy
+joblib
+hsml
+scikit-learn==1.9.0
+xgboost
