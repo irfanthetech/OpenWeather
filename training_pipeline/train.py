@@ -23,6 +23,12 @@ fs = project.get_feature_store(name='ow_aqi_predictor')
 mr = project.get_model_registry()
 fg = fs.get_feature_group('ow_aqi_features', version=1)
 df = fg.read()
+df = df.ffill(limit=3)
+
+# Drop rows with >30% missing values
+row_missing_fraction = df.isnull().mean(axis=1)
+df = df[row_missing_fraction <= 0.3].reset_index(drop=True)
+
 # Define features and targets
 feature_cols = [
     "pm25","pm10","no2","o3","co","so2","nh3","no",
