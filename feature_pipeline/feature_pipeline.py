@@ -187,20 +187,3 @@ if not historical_df.empty:
     # historical_df = historical_df.dropna()
 
     fg.insert(historical_df)
-
-
-
-
-
-# Insert your engineered DataFrame
-#fg.insert(df)
-
-# Read the data into a Pandas DataFrame
-df = fg.read()
-df = df.ffill(limit=3)
-
-# Drop rows with >30% missing values
-row_missing_fraction = df.isnull().mean(axis=1)
-df = df[row_missing_fraction <= 0.3].reset_index(drop=True)
-print("Remaining rows:", len(df))
-
