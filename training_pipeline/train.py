@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 from xgboost import XGBRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 load_dotenv()
-hw_key = os.getenv("HOPSWORKS_OW_API_KEY")
+hw_key = os.getenv("HOPSWORKS_API_KEY")
 if not hw_key:
     raise RuntimeError("Missing HOPSWORKS_OW_API_KEY in .env")
 
