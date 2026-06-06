@@ -182,8 +182,4 @@ historical_df = pd.DataFrame(all_rows)
 
 if not historical_df.empty:
     historical_df = compute_features(historical_df)
-
-    # Optional: remove rows with missing lag/target values
-    # historical_df = historical_df.dropna()
-
     fg.insert(historical_df)
